@@ -62,6 +62,13 @@ services:
     networks:
       - app-network
 
+  composer:
+    image: composer:2
+    volumes:
+        - ./:/var/www/html
+    working_dir: /var/www/html
+    command: composer install
+
 # Volumes
 volumes:
   mariadbdata:
